@@ -9,8 +9,4 @@ Run the following command inside `Data-Augmentation-for-Image-Classification-usi
     pip install -r requirements.txt
 
 
-### Download MS-COCO dataset
 
-Run `download_coco.sh` shell script
-
-    bash download_coco.sh
