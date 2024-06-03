@@ -1,7 +1,5 @@
 # Data-Augmentation-for-Image-Classification-using-Generative-AI
 
-# depth2detect
-
 ### Create virtual environment
 
 Run the following command inside `depth2detect/` and install the dependencies from `requirements.txt`.
