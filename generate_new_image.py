@@ -34,17 +34,18 @@ from utils import get_input_image_data, enhance_class_name, segment
 DEVICE = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 
 
-folder_name="/home/fa077317/rahat/IMAGENET12/IMAGENET12/Imagenet_20_new/train/"
-class_name = ('tailed frog',
- 'German shepherd',
- 'tabby',
- 'tiger',
- 'American black bear',
- 'monarch',
- 'wood rabbit',
- 'zebra',
- 'pickup',
- 'warplane')
+folder_name="/home/fa077317/rahat/IMAGENET12/IMAGENET12/Imagenet_10_new/train/"
+
+class_name = ('chickadee',
+ 'water ouzel',
+ 'loggerhead',
+ 'box turtle',
+ 'garter snake',
+ 'sea snake',
+ 'black and gold garden spider',
+ 'tick',
+ 'ptarmigan',
+ 'prairie chicken')
 
 t10_org, all_class = get_input_image_data(folder_name, class_name)
 
@@ -96,16 +97,17 @@ failed_list=[]
 
 
 #############  This should be more generalize version of the class_name ###########################################
-prompt_class=('frog',
- 'dog',
- 'cat',
- 'tiger',
- 'bear',
- 'butterfly',
- 'rabbit',
- 'zebra',
- 'pickup',
- 'warplane')
+
+prompt_class=('bird',
+ 'bird',
+ 'turtle',
+ 'turtle',
+ 'snake',
+ 'snake',
+ 'spider',
+ 'tick',
+ 'bird',
+ 'chicken')
 ###################################################################################################################
 
 ########### This are the predefined background types for the objects ##############################################
@@ -135,8 +137,6 @@ back_g_types = [
 ######### This is an optimization for background prompts generation, if not use avoid word then in automatic  #####
 ### prompt generation prompt_class can appear and then stable diffusion can generate that as a background #########
 ######## which is a corruption ####################################################################################
-
-# avoid_word="frog, dog, cat, tiger, bear, butterfly, rabbit, zebra, pickup, warplane, frogs, dogs, cats, tigers, bears, butterflies, rabbits, zebras, pickups, warplanes"
 
 # Convert tuple to string with commas
 avoid_word = ', '.join(prompt_class)
